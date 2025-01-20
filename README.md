@@ -1,66 +1,75 @@
-# End-to-end-Medical-Chatbot-using-Llama2
+# End-to-End Medical Chatbot Using Llama2
 
-# How to run?
-### STEPS:
+This project implements a chatbot designed to provide accurate and contextual responses based on medical knowledge extracted from a comprehensive medical book describing diseases. By leveraging Retrieval-Augmented Generation (RAG), the chatbot combines pre-trained language models with document retrieval for precise and reliable answers.
 
-Clone the repository
+## How to Run?
 
-```bash
-Project repo: https://github.com/m-lafont/Medical_ChatBot_Using_LLaMa2.git
-```
+### Steps
 
-### STEP 01- Create a conda environment after opening the repository
+1. **Clone the repository**
+   ```bash
+   Project repo: https://github.com/m-lafont/Medical_ChatBot_Using_LLaMa2.git
+   ```
 
-```bash
-conda create -n mchatbot python=3.8 -y
-```
+2. **Create a conda environment after opening the repository**
+   ```bash
+   conda create -n mchatbot python=3.8 -y
+   conda activate mchatbot
+   ```
 
-```bash
-conda activate mchatbot
-```
+3. **Install the requirements**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### STEP 02- install the requirements
-```bash
-pip install -r requirements.txt
-```
+4. **Create a `.env` file in the root directory and add your Pinecone credentials as follows:**
+   ```ini
+   PINECONE_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+   ```
 
+5. **Download the quantized model and place it in the `model` directory**
+   - **Model Name**: `llama-2-7b-chat.ggmlv3.q4_0.bin`
+   - **Download Link**: [Llama 2 Model on HuggingFace](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/tree/main)
 
-### Create a `.env` file in the root directory and add your Pinecone credentials as follows:
+6. **Store the index**
+   ```bash
+   python store_index.py
+   ```
 
-```ini
-PINECONE_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-```
+7. **Run the application**
+   ```bash
+   python app.py
+   ```
 
+8. **Access the chatbot**
+   ```bash
+   Open up localhost:
+   ```
 
-### Download the quantize model from the link provided in model folder & keep the model in the model directory:
+## Features
 
-```ini
-## Download the Llama 2 Model:
+### 1. Medical Document Processing
+- **PDF Extraction**: Uses `PyPDFLoader` to extract data from a medical book.
+- **Directory Support**: Load and process multiple PDFs efficiently.
 
-llama-2-7b-chat.ggmlv3.q4_0.bin
+### 2. Embedding Models
+- **HuggingFace Models**: Employs advanced embedding models from HuggingFace for accurate document representation.
+- **CTransformers Integration**: Provides an alternative embedding approach using community-driven tools.
 
+### 3. Vector Database Integration
+- **Pinecone Vector Store**: Implements vector storage using Pinecone for fast and scalable retrieval of disease-related information.
+- **LangChain Integration**: Chains prompts and retrieval workflows with `LangChain` to enable intelligent QA systems.
 
-## From the following link:
-https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/tree/main
-```
+### 4. Environment Management
+- **API Key Setup**: Handles Pinecone API key configuration through environment variables.
+- **Modular Functions**: Structured functions for loading, embedding, and retrieving medical knowledge.
 
-```bash
-# run the following command
-python store_index.py
-```
+## Applications
+- Medical question answering for healthcare professionals.
+- Disease information retrieval for researchers.
+- Educational tool for students studying medicine.
 
-```bash
-# Finally run the following command
-python app.py
-```
-
-Now,
-```bash
-open up localhost:
-```
-
-
-### Techstack Used:
+## Tech Stack Used
 
 - Python
 - LangChain
@@ -68,4 +77,13 @@ open up localhost:
 - Meta Llama2
 - Pinecone
 
+## Contributing
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
+
+Developed to enhance accessibility and understanding of medical knowledge using AI-driven retrieval and generation techniques.
 
