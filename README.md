@@ -6,7 +6,7 @@
 Clone the repository
 
 ```bash
-Project repo: https://github.com/
+Project repo: https://github.com/m-lafont/Medical_ChatBot_Using_LLaMa2.git
 ```
 
 ### STEP 01- Create a conda environment after opening the repository
@@ -29,7 +29,6 @@ pip install -r requirements.txt
 
 ```ini
 PINECONE_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-PINECONE_API_ENV = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
 
