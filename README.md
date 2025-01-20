@@ -83,7 +83,5 @@ Contributions are welcome! Please fork the repository and create a pull request 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
----
 
-Developed to enhance accessibility and understanding of medical knowledge using AI-driven retrieval and generation techniques.
 
